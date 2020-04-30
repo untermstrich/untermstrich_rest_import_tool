@@ -25,9 +25,11 @@ Konfiguration
     * Import1.php ist ein Beispiel mit mehreren kommen und gehen Zeiten je Tag
       * `Kennung;Datum;Zeit;Richtung`
       * `1;01.03.2019;07:11;Kommt`
+      * Für diesen Controller nutzen Sie bitte die daten1_example.txt als Beispieldatei.
     * Import2.php ist ein Beispiel mit einer Zeile je Tag, mit Pausen Abzug
       * `Kennung	Datum	Von	Bis	Abzug`
       * `1	11.03.2019	07:11	16:30	0.5`
+      * Für diesen Controller nutzen Sie bitte die daten2_example.txt als Beispieldatei.
   * Im jeweiligen Controller, zu finden unter `application/controllers` kann am Anfang das Dateiformat konfiguriert werden,
     danach finden Sie den Programmcode, den Sie für das Einlesen der Datei anpassen können.
 
