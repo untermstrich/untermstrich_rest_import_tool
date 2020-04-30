@@ -1,6 +1,16 @@
 untermStrich REST Import tool
 =============================
 
+Ein Import Tool um die REST Schnittstelle von untermStich für Beginn/Ende Zeiten anzusprechen.
+Sie benötigen ein installiertes und aktiviertes untermStrich ab Version X2.
+http://www.untermstrich.com/
+
+Die Schnittstelle ist hier im Detail beschrieben: 
+https://webservices.untermstrich.com/h3/rest:start_end_time
+
+Um die Zeiten zu sehen, müssen Sie in untermStrich die Beginn- und Endezeiten aktivieren:
+https://webservices.untermstrich.com/h3/de:setup:setup:sideboard:hours:module_hours#beginn-_und_endezeiten
+
 Installation
 ------------
 
