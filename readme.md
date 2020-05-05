@@ -1,4 +1,4 @@
-untermStrich REST Import tool
+untermStrich REST Import Tool
 =============================
 
 Ein Import Tool um die REST Schnittstelle von untermStich für Beginn/Ende Zeiten anzusprechen.
