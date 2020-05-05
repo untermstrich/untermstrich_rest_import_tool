@@ -24,7 +24,7 @@ class Import2 extends Base_import_controller
         $escape = "\\";
         
         $header_format = array(
-            //'staff'         => 'Mtarbeiter',
+            //'staff'         => 'Mitarbeiter',
             'unique'        => 'Kennung',
             'date'          => 'Datum',
             'time_start'    => 'Von',
