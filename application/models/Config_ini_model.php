@@ -21,11 +21,13 @@ class Config_ini_model extends CI_Model
             die(91);
         }
 
+        $this->_config_has_field($config, 'filename');
         $this->_config_has_field($config, 'url');
         $this->_config_has_field($config, 'user');
         $this->_config_has_field($config, 'pass');
         $this->_config_has_field($config, 'match');
                 
+        $reply->filename = trim($config['filename']);
         $reply->url = trim($config['url'], '/ ');
         $reply->user = trim($config['user']);
         $reply->pass = trim($config['pass']);

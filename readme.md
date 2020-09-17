@@ -37,5 +37,3 @@ Start
 -----
 
     php index.php
-    php index.php daten1.txt
-    php index.php daten1.txt config.ini

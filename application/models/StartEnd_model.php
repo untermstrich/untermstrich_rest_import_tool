@@ -65,7 +65,8 @@ class StartEnd_model extends CI_Model {
             $date_time_break_start->modify('+1 Minutes');
 
             $date_time_break_end = clone $date_time_break_start;
-            $date_time_break_end->modify('+'.($time_deduct*60).' Minutes');
+            $add_break_sec = intval($time_deduct*3600);
+            $date_time_break_end->modify('+'.$add_break_sec.' Seconds');
             
             if ($date_time_end<$date_time_break_end) {
                 $msg = 'Der Abzug darf nicht größer sein, als die gesamten Stunden des Tages.';

@@ -9,7 +9,7 @@ abstract class Base_import_controller extends CI_Controller
     /**
      * Run import
      */
-    public function index($filename = 'daten1.txt', $config_filename = 'config.ini')
+    public function index()
     {
         h1out(' . . . . . . . . . . . . . . .   Willkommen bei '.__CLASS__.'   . . . . . . . . . . . . . . . ');
         
@@ -22,10 +22,12 @@ abstract class Base_import_controller extends CI_Controller
         // Reading file
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
+        $config_filename = 'config.ini';
         h1out('Lese Konfiguration '.$config_filename);
         
         $config = $this->config_ini->get_list($config_filename);
         
+        h3out('Dateiname: '.$config->filename);
         h3out('URL: '.$config->url);
         h3out('Benutzer: '.$config->user);
         h3out('Passwortlänge: '.strlen($config->pass));
@@ -64,6 +66,7 @@ abstract class Base_import_controller extends CI_Controller
         // Reading file
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
+        $filename = $config->filename;
         h1out('Lese Datei '.$filename);
         
         if (!($fn = fopen($filename, 'r'))) {

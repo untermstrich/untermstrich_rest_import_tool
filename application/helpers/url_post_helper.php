@@ -29,6 +29,7 @@ if ( ! function_exists('url_req')) {
         
         //Parse url
         $parsedUrl = parse_url($url);
+        var_dump($parsedUrl);
 
         //Get host
         $host = $parsedUrl['host'];
@@ -49,7 +50,11 @@ if ( ! function_exists('url_req')) {
         
         //SSL mode
         $fsockhost = $host;
-        if ($port>400) {
+        if (isset($parsedUrl['scheme'])) {
+            if ($parsedUrl['scheme']==='https') {
+                $fsockhost = 'ssl://'.$host;
+            }
+        } elseif ($port>400) {
             $fsockhost = 'ssl://'.$host;
         }
 

@@ -87,7 +87,7 @@ class Import1 extends Base_import_controller
             
             if (count($header)!==count($row)) {
                 $msg = 'Ungültiges Zeilenformat: Die Feldanzahl stimmt nicht mit dem Header überein';
-                log_message('error', $staff.' - '.$msg);
+                log_message('error', $msg.': '.print_r($row, true));
                 echo "\n".$msg."\n";
                 continue;
             }

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once(APPPATH.'controllers/Base_import_controller.php');
 
-class Import2 extends Base_import_controller
+class Import3 extends Base_import_controller
 {
     protected $debug = false;
 
@@ -19,16 +19,15 @@ class Import2 extends Base_import_controller
         // File format configuration
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        $delimiter = "\t";
+        $delimiter = ';';
         $enclosure = '"';
         $escape = "\\";
         
         $header_format = array(
-            //'staff'         => 'Mitarbeiter',
-            'unique'        => 'Kennung',
+            'unique'        => 'PersNr',
             'date'          => 'Datum',
-            'time_start'    => 'Von',
-            'time_end'      => 'Bis',
+            'time_start'    => 'K',
+            'time_end'      => 'G',
             'time_deduct'   => 'Abzug'
         );
         
@@ -98,7 +97,7 @@ class Import2 extends Base_import_controller
             $date = $this->value_from_row($header_match, 'date', $row);
             $time_start = $this->value_from_row($header_match, 'time_start', $row);
             $time_end = $this->value_from_row($header_match, 'time_end', $row);
-            $time_deduct = $this->value_from_row($header_match, 'time_deduct', $row);
+            $time_deduct = str_replace(',', '.', $this->value_from_row($header_match, 'time_deduct', $row));
             
             if ($time_start==='' || $time_end==='') {
                 $msg = 'Ungültiges Zeilenformat: Zeitangaben fehlen: "'.$time_start.'" - "'.$time_end.'"';
@@ -122,7 +121,7 @@ class Import2 extends Base_import_controller
                 $unique ?? '',
                 $date_time_start,
                 $date_time_end,
-                floatval($time_deduct)
+                abs(floatval($time_deduct))
             );
             echo 'X';
         }
