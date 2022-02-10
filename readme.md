@@ -21,6 +21,10 @@ Benötigt:
 Konfiguration
 
   * Die config_example.ini in config.ini kopieren und anpassen (Direkt im root)
+    * Den REST Benutzer erstellen Sie wie hier beschrieben:
+      * https://webservices.untermstrich.com/h3/de:team:sideboard:create_rest_user
+    * Wenn Sie ein Zusatzdatenfeld benützen möchten, hier die Beschreibung dazu:
+      * https://webservices.untermstrich.com/h3/de:setup:additional_data
   * Der Start-Controller wird in `application/config/routes.php` über den Wert `$route['default_controller']` festgelegt
     * Import1.php ist ein Beispiel mit mehreren kommen und gehen Zeiten je Tag
       * `Kennung;Datum;Zeit;Richtung`
