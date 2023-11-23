@@ -44,3 +44,5 @@ Start
 -----
 
     php index.php
+
+Führen Sie dies über die Aufgabenplanung bei Windows oder CRON-Tasks auf Linux regelmäßig oder 1x in der Nacht aus.
