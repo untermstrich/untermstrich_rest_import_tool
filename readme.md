@@ -37,6 +37,11 @@ Konfiguration
     * Import3.php ist ein Beispiel mit einer Zeile je Tag, mit Pausen Abzug im ZMI Format
       * `PersNr;Datum;K;G;Abzug;`
       * `17;10.09.2021;08:00;16:00;0,50;`
+        * Pers.Nr.      >>  nur Ziffern ohne führende 0, in ZMI Time Feld Code
+        * Datum
+        * K               >> erste Kommen Zeit des Tages
+        * G               >> letzte GehenZeit des Tages
+        * Abzug        >> also Pausen und bei Mehrfachbuchungen die "Zeit dazwischen"
   * Im jeweiligen Controller, zu finden unter `application/controllers` kann am Anfang das Dateiformat konfiguriert werden,
     danach finden Sie den Programmcode, den Sie für das Einlesen der Datei anpassen können.
 
