@@ -34,6 +34,9 @@ Konfiguration
       * `Kennung	Datum	Von	Bis	Abzug`
       * `1	11.03.2019	07:11	16:30	0.5`
       * Für diesen Controller nutzen Sie bitte die daten2_example.txt als Beispieldatei.
+    * Import3.php ist ein Beispiel mit einer Zeile je Tag, mit Pausen Abzug im ZMI Format
+      * `PersNr;Datum;K;G;Abzug;`
+      * `17;10.09.2021;08:00;16:00;0,50;`
   * Im jeweiligen Controller, zu finden unter `application/controllers` kann am Anfang das Dateiformat konfiguriert werden,
     danach finden Sie den Programmcode, den Sie für das Einlesen der Datei anpassen können.
 
