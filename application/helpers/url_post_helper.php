@@ -29,7 +29,7 @@ if ( ! function_exists('url_req')) {
         
         //Parse url
         $parsedUrl = parse_url($url);
-        var_dump($parsedUrl);
+        echo "\033[32m" . json_encode($parsedUrl, JSON_PRETTY_PRINT) . "\033[0m\n";
 
         //Get host
         $host = $parsedUrl['host'];

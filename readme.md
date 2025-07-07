@@ -16,7 +16,7 @@ Installation
 
 Benötigt:
 
-  * PHP ab 7.0
+  * PHP ab 7.4 - 8.3
 
 Konfiguration
 

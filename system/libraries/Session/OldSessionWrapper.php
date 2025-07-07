@@ -6,7 +6,7 @@
  *
  * This content is released under the MIT License (MIT)
  *
- * Copyright (c) 2014 - 2019, British Columbia Institute of Technology
+ * Copyright (c) 2022, CodeIgniter Foundation
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,34 +28,71 @@
  *
  * @package	CodeIgniter
  * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2019, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
+ * @copyright	Copyright (c) 2022, CodeIgniter Foundation (https://codeigniter.com/)
+ * @license	https://opensource.org/licenses/MIT	MIT License
  * @link	https://codeigniter.com
- * @since	Version 1.3.0
+ * @since	Version 3.0.0
  * @filesource
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * SQLite Utility Class
+ * OldSessionWrapper
  *
- * @category	Database
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/database/
+ * PHP 8 Session handler compatibility wrapper, pre-PHP8 version
+ *
+ * @package	CodeIgniter
+ * @subpackage	Libraries
+ * @category	Sessions
+ * @author	Andrey Andreev
+ * @link	https://codeigniter.com/userguide3/libraries/sessions.html
  */
-class CI_DB_sqlite_utility extends CI_DB_utility {
+class CI_SessionWrapper implements SessionHandlerInterface, SessionUpdateTimestampHandlerInterface {
 
-	/**
-	 * Export
-	 *
-	 * @param	array	$params	Preferences
-	 * @return	mixed
-	 */
-	protected function _backup($params = array())
+	protected $driver;
+
+	public function __construct(CI_Session_driver_interface $driver)
 	{
-		// Currently unsupported
-		return $this->db->display_error('db_unsupported_feature');
+		$this->driver = $driver;
 	}
 
+	public function open($save_path, $name)
+	{
+		return $this->driver->open($save_path, $name);
+	}
+
+	public function close()
+	{
+		return $this->driver->close();
+	}
+
+	public function read($id)
+	{
+		return $this->driver->read($id);
+	}
+
+	public function write($id, $data)
+	{
+		return $this->driver->write($id, $data);
+	}
+
+	public function destroy($id)
+	{
+		return $this->driver->destroy($id);
+	}
+
+	public function gc($maxlifetime)
+	{
+		return $this->driver->gc($maxlifetime);
+	}
+
+	public function updateTimestamp($id, $data)
+	{
+		return $this->driver->updateTimestamp($id, $data);
+	}
+
+	public function validateId($id)
+	{
+		return $this->driver->validateId($id);
+	}
 }
