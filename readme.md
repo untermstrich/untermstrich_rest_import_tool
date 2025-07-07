@@ -2,14 +2,14 @@ untermStrich REST Import Tool
 =============================
 
 Ein Import Tool um die REST Schnittstelle von untermStich für Beginn/Ende Zeiten anzusprechen.
-Sie benötigen ein installiertes und aktiviertes untermStrich ab Version X2.
+Sie benötigen ein installiertes und aktiviertes untermStrich ab Version X4.
 http://www.untermstrich.com/
 
 Die Schnittstelle ist hier im Detail beschrieben:
 https://webservices.untermstrich.com/h4/rest:start_end_time
 
 Um die Zeiten zu sehen, müssen Sie in untermStrich die Beginn- und Endezeiten aktivieren:
-https://webservices.untermstrich.com/h3/de:setup:setup:sideboard:hours:module_hours#beginn-_und_endezeiten
+https://webservices.untermstrich.com/h4/de:setup:setup:sideboard:hours:module_hours#beginn-_und_endezeiten
 
 Installation
 ------------
@@ -22,9 +22,9 @@ Konfiguration
 
   * Die config_example.ini in config.ini kopieren (umbenennen) und anpassen (Direkt im root)
     * Den REST Benutzer erstellen Sie wie hier beschrieben:
-      * https://webservices.untermstrich.com/h3/de:team:sideboard:create_rest_user
+      * https://webservices.untermstrich.com/h4/de:team:sideboard:create_rest_user
     * Wenn Sie ein Zusatzdatenfeld benützen möchten, hier die Beschreibung dazu:
-      * https://webservices.untermstrich.com/h3/de:setup:additional_data
+      * https://webservices.untermstrich.com/h4/de:setup:additional_data
   * Der Start-Controller wird in `application/config/routes.php` über den Wert `$route['default_controller']` festgelegt
     * Import1.php ist ein Beispiel mit mehreren kommen und gehen Zeiten je Tag
       * `Kennung;Datum;Zeit;Richtung`
